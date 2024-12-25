@@ -1,0 +1,81 @@
+/* Header Styles */
+.header {
+  background: linear-gradient(90deg, #43cea2, #185a9d); /* Enhanced gradient */
+  color: white;
+  padding: 20px 40px; /* Increased padding for a cleaner look */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Arial', sans-serif; /* Clean font */
+}
+
+.header-title {
+  font-size: 32px; /* Larger font size for title */
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+  flex: 1; /* Ensures the title takes up space on the left */
+  color: #f0f0f0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  flex: 2; /* Allows the nav to align to the right */
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 25px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 50px; /* Rounded links */
+  background: rgba(255, 255, 255, 0.2); /* Subtle background for links */
+  transition: all 0.4s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Brighter hover effect */
+  color: #185a9d; /* Complementary hover color */
+  transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Elevated hover shadow */
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .header-title {
+    font-size: 24px;
+  }
+
+  .nav-list {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-end;
+  }
+
+  .nav-item {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+}

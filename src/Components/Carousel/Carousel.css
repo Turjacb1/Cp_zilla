@@ -1,0 +1,11 @@
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: auto;
+  }
+  

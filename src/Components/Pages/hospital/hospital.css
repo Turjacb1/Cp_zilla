@@ -1,0 +1,47 @@
+/* hospital.css */
+.hospital-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hospital-header {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .hospital-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .hospital-table th, .hospital-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .hospital-table th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  .hospital-table td {
+    background-color: #fff;
+  }
+  
+  .hospital-table a {
+    color: #4caf50;
+    text-decoration: none;
+  }
+  
+  .hospital-table a:hover {
+    text-decoration: underline;
+  }
+  

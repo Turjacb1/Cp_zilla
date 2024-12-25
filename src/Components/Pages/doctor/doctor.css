@@ -1,0 +1,59 @@
+/* doctor-container styles */
+.doctor-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* doctor-header styles */
+  .doctor-header {
+    text-align: center;
+    color: #333;
+    font-size: 24px; /* Adjusted for a better header appearance */
+    font-weight: 600; /* Added font weight for emphasis */
+    margin-bottom: 20px; /* Added margin to separate from the content */
+  }
+  
+  /* doctor-list styles */
+  .doctor-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  /* doctor-list-item styles */
+  .doctor-list-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px; /* Increased margin for better separation */
+    background-color: #fff; /* Added background color for better readability */
+    padding: 15px; /* Added padding for spacing inside the list item */
+    border: 1px solid #ddd; /* Border to distinguish items */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+  }
+  
+  /* doctor-link styles */
+  .doctor-link {
+    color: #4caf50;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500; /* Added font weight for consistency */
+    transition: color 0.3s ease; /* Added transition effect for hover state */
+  }
+  
+  /* doctor-link hover styles */
+  .doctor-link:hover {
+    text-decoration: underline;
+    color: #388e3c; /* Darker shade on hover for emphasis */
+  }
+  
+  /* Optional: Add additional styles for better accessibility */
+  .doctor-link:focus {
+    outline: 2px solid #388e3c; /* Focus outline for accessibility */
+  }
+  
