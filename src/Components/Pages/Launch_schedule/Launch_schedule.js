@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Footer/Footer';
 
 const Launch_schedule = () => {
     const schedules = [
@@ -49,6 +50,7 @@ const Launch_schedule = () => {
                     ))}
                 </tbody>
             </table>
+            <Footer/>
         </div>
     );
 };

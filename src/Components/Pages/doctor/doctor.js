@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./doctor.css";
+import Footer from "../../Footer/Footer";
 
 const doctor = () => {
   const departments = [
@@ -22,6 +23,7 @@ const doctor = () => {
           </li>
         ))}
       </ul>
+      <Footer/>
     </div>
   );
 };

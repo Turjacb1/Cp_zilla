@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Footer/Footer';
 
 const Hotels = () => {
     return (
@@ -162,6 +163,7 @@ const Hotels = () => {
                     </tr>
                 </tbody>
             </table>
+            <Footer/>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import './hospital.css'; // Import the CSS file for styling
+import Footer from '../../Footer/Footer';
 
 const Hospital = () => {
     const hospitals = [
@@ -417,6 +418,7 @@ const Hospital = () => {
           ))}
         </tbody>
       </table>
+      <Footer/>
     </div>
   );
 };

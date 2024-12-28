@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Footer/Footer';
 
 const Landmarks = () => {
     return (
@@ -70,6 +71,7 @@ const Landmarks = () => {
 
                 </tbody>
             </table>
+            <Footer/>
         </div>
     );
 };

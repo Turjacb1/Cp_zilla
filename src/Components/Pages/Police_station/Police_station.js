@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Footer/Footer';
 
 const Police_station = () => {
     const policeData = [
@@ -47,6 +48,7 @@ const Police_station = () => {
                     ))}
                 </tbody>
             </table>
+            <Footer/>
         </div>
     );
 };

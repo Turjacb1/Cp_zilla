@@ -1,5 +1,6 @@
 import React from 'react';
 import '../bus_schedule/bus_schedule.css'
+import Footer from '../../Footer/Footer';
 
 const train_schedule = () => {
     return (
@@ -75,6 +76,7 @@ const train_schedule = () => {
                     </tr>
                 </tbody>
             </table>
+            <Footer/>
         </div>
     );
 };

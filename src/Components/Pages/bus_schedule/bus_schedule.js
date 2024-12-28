@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './bus_schedule.css'; // Import the CSS file
+import Footer from '../../Footer/Footer';
 
 const BusSchedule = () => {
   const [buses, setBuses] = useState([]);  // State to hold the bus data
@@ -78,6 +79,7 @@ const BusSchedule = () => {
           </tbody>
         </table>
       )}
+      <Footer/>
     </div>
   );
 };

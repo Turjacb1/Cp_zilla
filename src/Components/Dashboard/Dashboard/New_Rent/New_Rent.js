@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './New_Rent.css';
+import Footer from '../../../Footer/Footer';
 
 const New_Rent = () => {
   const [formData, setFormData] = useState({
@@ -87,6 +88,7 @@ const New_Rent = () => {
 
         <button type="submit" className="submit-button">Submit</button>
       </form>
+      <Footer/>
     </div>
   );
 };

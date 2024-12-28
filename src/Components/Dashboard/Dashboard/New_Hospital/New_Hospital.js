@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './New_Hospital.css';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
+import Footer from '../../../Footer/Footer';
 
 const firebaseConfig = {
   apiKey: "<YOUR_API_KEY>",
@@ -124,6 +125,7 @@ const New_Hospital = () => {
 
       {successMessage && <div className="success-message">{successMessage}</div>}
       {errorMessage && <div className="error-message">{errorMessage}</div>}
+      <Footer/>
     </div>
   );
 };

@@ -46,6 +46,7 @@ function App() {
         <Route path="/add-hospital" element={<New_Hospital/>}/>
         <Route path="/add-tourist-spot" element={<New_Spot/>}/>
         <Route path="/add-house-rent" element={<New_Rent/>}/>
+        
         <Route path="/footer" element={<Footer/>}/>
 
         

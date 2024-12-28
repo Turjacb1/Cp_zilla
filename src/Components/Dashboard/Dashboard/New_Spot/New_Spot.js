@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './New_Spot.css';
+import Footer from '../../../Footer/Footer';
 
 const New_Spot = () => {
   const [formData, setFormData] = useState({
@@ -54,6 +55,7 @@ const New_Spot = () => {
 
         <button type="submit" className="submit-button">Submit</button>
       </form>
+      <Footer/>
     </div>
   );
 };

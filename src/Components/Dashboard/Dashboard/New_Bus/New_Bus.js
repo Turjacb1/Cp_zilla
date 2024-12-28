@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './New_Bus.css';
+import Footer from '../../../Footer/Footer';
 
 const New_Bus = () => {
   const [formData, setFormData] = useState({
@@ -113,6 +114,7 @@ const New_Bus = () => {
 
       {/* Conditionally display the success message */}
       {successMessage && <div className="success-message">{successMessage}</div>}
+      <Footer/>
     </div>
   );
 };

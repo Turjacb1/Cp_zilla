@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Footer/Footer';
 
 const FireService = () => {
     return (
@@ -64,6 +65,7 @@ const FireService = () => {
                     </tr>
                 </tbody>
             </table>
+            <Footer/>
         </div>
     );
 };
