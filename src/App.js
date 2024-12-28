@@ -20,6 +20,7 @@ import New_Bus from "./Components/Dashboard/Dashboard/New_Bus/New_Bus";
 import New_Hospital from "./Components/Dashboard/Dashboard/New_Hospital/New_Hospital";
 import New_Spot from "./Components/Dashboard/Dashboard/New_Spot/New_Spot";
 import New_Rent from "./Components/Dashboard/Dashboard/New_Rent/New_Rent";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/add-hospital" element={<New_Hospital/>}/>
         <Route path="/add-tourist-spot" element={<New_Spot/>}/>
         <Route path="/add-house-rent" element={<New_Rent/>}/>
+        <Route path="/footer" element={<Footer/>}/>
 
         
 

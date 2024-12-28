@@ -1,5 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
+import Footer from '../../Footer/Footer';
 
 const Dashboard = () => {
   const options = [
@@ -25,8 +26,11 @@ const Dashboard = () => {
             </a>
           </div>
         ))}
+        
       </div>
+      <Footer/>
     </div>
+    
   );
 };
 

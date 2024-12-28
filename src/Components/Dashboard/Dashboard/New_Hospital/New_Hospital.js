@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
 import './New_Hospital.css';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+
+const firebaseConfig = {
+  apiKey: "<YOUR_API_KEY>",
+  authDomain: "<YOUR_AUTH_DOMAIN>",
+  projectId: "<YOUR_PROJECT_ID>",
+  storageBucket: "<YOUR_STORAGE_BUCKET>",
+  messagingSenderId: "<YOUR_MESSAGING_SENDER_ID>",
+  appId: "<YOUR_APP_ID>",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 const New_Hospital = () => {
   const [formData, setFormData] = useState({
@@ -10,22 +24,31 @@ const New_Hospital = () => {
     website: '',
   });
 
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Submitted:', formData);
-    // Add logic to handle form submission (e.g., send data to the backend)
-    setFormData({
-      hospitalName: '',
-      address: '',
-      hours: '',
-      phone: '',
-      website: '',
-    });
+    try {
+      const docRef = await addDoc(collection(db, 'hospitals'), formData);
+      console.log('Document written with ID: ', docRef.id);
+      setSuccessMessage('Hospital added successfully!');
+      setFormData({
+        hospitalName: '',
+        address: '',
+        hours: '',
+        phone: '',
+        website: '',
+      });
+    } catch (err) {
+      console.error('Error adding document: ', err);
+      setErrorMessage('Error adding hospital. Please try again.');
+    }
   };
 
   return (
@@ -98,6 +121,9 @@ const New_Hospital = () => {
 
         <button type="submit" className="submit-button">Submit</button>
       </form>
+
+      {successMessage && <div className="success-message">{successMessage}</div>}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
     </div>
   );
 };

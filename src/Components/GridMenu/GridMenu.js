@@ -2,6 +2,7 @@ import React from "react";
 import { FaStethoscope, FaHospital, FaBus, FaTrain, FaLandmark, FaHome, FaFireExtinguisher, FaShippingFast, FaShieldAlt, FaBolt, FaTint, FaHotel, FaCar } from "react-icons/fa"; // Import icons
 import "./GridMenu.css";
 import MenuItem from "../MenuItem/MenuItem";
+import Footer from "../Footer/Footer";
 
 
 
@@ -29,7 +30,9 @@ const GridMenu = () => {
         {menuItems.map((item, index) => (
           <MenuItem key={index} title={item.title} icon={item.icon} path={item.path} />
         ))}
+        <Footer/>
       </div>
+      
     );
   };
   

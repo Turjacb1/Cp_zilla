@@ -23,7 +23,7 @@ const New_Bus = () => {
     console.log('Form Submitted:', formData);
 
     try {
-      const response = await fetch('http://localhost:5000/api/bus', {
+      const response = await fetch('<YOUR_FIREBASE_API_ENDPOINT>/api/bus', { // Replace with your Firebase API endpoint
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
