@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './New_Bus.css';
-import Footer from '../../../Footer/Footer';
 
 const New_Bus = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +9,8 @@ const New_Bus = () => {
     ticketPrice: '',
   });
 
-  const [successMessage, setSuccessMessage] = useState(''); // New state for success message
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   // Handle form input changes
   const handleChange = (e) => {
@@ -21,10 +21,9 @@ const New_Bus = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Submitted:', formData);
 
     try {
-      const response = await fetch('<YOUR_FIREBASE_API_ENDPOINT>/api/bus', { // Replace with your Firebase API endpoint
+      const response = await fetch('http://localhost:5000/api/bus', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,15 +31,15 @@ const New_Bus = () => {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-      console.log(data.message); // Check the success message
-
-      // If successful, set the success message
-      if (response.ok) {
-        setSuccessMessage('Bus schedule submitted successfully!');
+      if (!response.ok) {
+        throw new Error('Failed to submit bus data.');
       }
 
-      // Reset the form after successful submission
+      const data = await response.json();
+      setSuccessMessage(data.message || 'Bus schedule submitted successfully!');
+      setErrorMessage('');
+      
+      // Reset form data
       setFormData({
         busName: '',
         from: '',
@@ -48,14 +47,14 @@ const New_Bus = () => {
         ticketPrice: '',
       });
     } catch (err) {
-      console.error('Error saving bus data:', err);
-      setSuccessMessage('Error submitting bus data. Please try again.'); // Error message
+      setErrorMessage(err.message || 'Error submitting bus data.');
+      setSuccessMessage('');
     }
   };
 
   return (
     <div className="new-bus-container">
-      <h2 className="form-title">Add New Bus Schedule</h2>
+      <h2 className="form-title" style={{color:"blue"}}>Add New Bus Schedule</h2>
       <form onSubmit={handleSubmit} className="new-bus-form">
         <div className="form-group">
           <label htmlFor="busName">Bus Name</label>
@@ -69,7 +68,6 @@ const New_Bus = () => {
             required
           />
         </div>
-
         <div className="form-group">
           <label htmlFor="from">From</label>
           <input
@@ -78,11 +76,10 @@ const New_Bus = () => {
             name="from"
             value={formData.from}
             onChange={handleChange}
-            placeholder="Enter Departure Location"
+            placeholder="Enter Departure Address"
             required
           />
         </div>
-
         <div className="form-group">
           <label htmlFor="to">To</label>
           <input
@@ -95,7 +92,6 @@ const New_Bus = () => {
             required
           />
         </div>
-
         <div className="form-group">
           <label htmlFor="ticketPrice">Ticket Price</label>
           <input
@@ -108,13 +104,10 @@ const New_Bus = () => {
             required
           />
         </div>
-
         <button type="submit" className="submit-button">Submit</button>
       </form>
-
-      {/* Conditionally display the success message */}
-      {successMessage && <div className="success-message">{successMessage}</div>}
-      <Footer/>
+      {successMessage && <p className="success-message">{successMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
   );
 };

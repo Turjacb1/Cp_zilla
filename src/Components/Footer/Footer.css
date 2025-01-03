@@ -1,16 +1,5 @@
-.footer {
-  background-color: #333;
-  color: white;
-  text-align:center;
-  padding: 10px;
-  position: fixed;
-  width: 50%;
-  bottom: 0;
-  margin-top: 60px;
-  
-
+.footer-content p
+{
+color: black;
 }
 
-.footer-content p {
-  margin: -10px;
-}

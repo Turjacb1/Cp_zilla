@@ -25,7 +25,7 @@ const New_Spot = () => {
 
   return (
     <div className="new-spot-container">
-      <h2 className="form-title">Add New Spot</h2>
+      <h2 className="form-title" style={{color:"blue"}}>Add New Spot</h2>
       <form onSubmit={handleSubmit} className="new-spot-form">
         <div className="form-group">
           <label htmlFor="placeName">Place Name</label>
@@ -47,7 +47,7 @@ const New_Spot = () => {
             name="details"
             value={formData.details}
             onChange={handleChange}
-            placeholder="Enter details (location, how to go, etc.)"
+            placeholder="Enter details (Address, how to go, etc.)"
             rows="5"
             required
           ></textarea>
@@ -55,7 +55,7 @@ const New_Spot = () => {
 
         <button type="submit" className="submit-button">Submit</button>
       </form>
-      <Footer/>
+      
     </div>
   );
 };

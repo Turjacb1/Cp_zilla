@@ -1,14 +1,15 @@
 import React from 'react';
-import '../bus_schedule/bus_schedule.css'
-import Footer from '../../Footer/Footer';
+import './train_schedule.css';
+
+
 
 const train_schedule = () => {
     return (
-        <div style={{ padding: '20px' }}>
+        <div>
             <h2>Train Schedule</h2>
             
             <h3>Intercity Train From Chandpur:</h3>
-            <table border="1" cellPadding="10" cellSpacing="0" style={{ width: '100%', textAlign: 'left' }}>
+            <table>
                 <thead>
                     <tr>
                         <th>Train No</th>
@@ -34,7 +35,7 @@ const train_schedule = () => {
             </table>
             
             <h3>Mail/Express Trains From Chandpur:</h3>
-            <table border="1" cellPadding="10" cellSpacing="0" style={{ width: '100%', textAlign: 'left' }}>
+            <table>
                 <thead>
                     <tr>
                         <th>Train No</th>
@@ -76,7 +77,7 @@ const train_schedule = () => {
                     </tr>
                 </tbody>
             </table>
-            <Footer/>
+            
         </div>
     );
 };

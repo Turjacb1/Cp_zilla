@@ -4,7 +4,7 @@ import Footer from '../../../Footer/Footer';
 
 const New_Rent = () => {
   const [formData, setFormData] = useState({
-    location: '',
+    Address: '',
     rentDetails: '',
     photo: null,
     contact: '',
@@ -24,7 +24,7 @@ const New_Rent = () => {
     console.log('Form Submitted:', formData);
     // Add logic to handle form submission (e.g., send data to the backend)
     setFormData({
-      location: '',
+      Address: '',
       rentDetails: '',
       photo: null,
       contact: '',
@@ -33,17 +33,17 @@ const New_Rent = () => {
 
   return (
     <div className="new-rent-container">
-      <h2 className="form-title">Add New Rent Listing</h2>
+      <h2 className="form-title" style={{color:"blue"}}>Add New Rent Listing</h2>
       <form onSubmit={handleSubmit} className="new-rent-form">
         <div className="form-group">
-          <label htmlFor="location">Location</label>
+          <label htmlFor="Address">Address</label>
           <input
             type="text"
-            id="location"
-            name="location"
-            value={formData.location}
+            id="Address"
+            name="Address"
+            value={formData.Address}
             onChange={handleChange}
-            placeholder="Enter location"
+            placeholder="Enter Address"
             required
           />
         </div>
@@ -88,7 +88,7 @@ const New_Rent = () => {
 
         <button type="submit" className="submit-button">Submit</button>
       </form>
-      <Footer/>
+      
     </div>
   );
 };

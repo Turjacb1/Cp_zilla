@@ -54,7 +54,7 @@ const New_Hospital = () => {
 
   return (
     <div className="new-hospital-container">
-      <h2 className="form-title">Add New Hospital</h2>
+      <h2 className="form-title" style={{color:"blue"}}>Add New Hospital</h2>
       <form onSubmit={handleSubmit} className="new-hospital-form">
         <div className="form-group">
           <label htmlFor="hospitalName">Hospital Name</label>
@@ -125,7 +125,7 @@ const New_Hospital = () => {
 
       {successMessage && <div className="success-message">{successMessage}</div>}
       {errorMessage && <div className="error-message">{errorMessage}</div>}
-      <Footer/>
+      
     </div>
   );
 };

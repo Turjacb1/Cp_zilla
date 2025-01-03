@@ -65,7 +65,56 @@ app.get('/api/bus', async (req, res) => {
       res.status(500).json({ message: 'Error retrieving bus data', error: err });
     }
   });
+
+
+
   
+// Define Doctor schema and model
+const doctorSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  phone: { type: String, required: true },
+  address: { type: String, required: true },
+  doctorType: { type: String, required: true },
+});
+
+const Doctor = mongoose.model('Doctor', doctorSchema);
+
+// POST route to save doctor data
+app.post('/api/doctors', async (req, res) => {
+  const { name, phone, address, doctorType } = req.body;
+
+  // Validate the incoming data
+  if (!name || !phone || !address || !doctorType) {
+    return res.status(400).json({ message: 'All fields are required' });
+  }
+
+  const newDoctor = new Doctor({
+    name,
+    phone,
+    address,
+    doctorType,
+  });
+
+  try {
+    await newDoctor.save();
+    res.status(201).json({ message: 'Doctor added successfully!' });
+  } catch (err) {
+    res.status(500).json({ message: 'Error saving doctor data', error: err });
+  }
+});
+
+// GET route to retrieve all doctors
+app.get('/api/doctors', async (req, res) => {
+  try {
+    const doctors = await Doctor.find();  // Fetch all doctors from the database
+    res.status(200).json(doctors);  // Send the doctors as a JSON response
+  } catch (err) {
+    res.status(500).json({ message: 'Error retrieving doctor data', error: err });
+  }
+});
+
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

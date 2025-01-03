@@ -1,6 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
-import Footer from '../../Footer/Footer';
+
 
 const Dashboard = () => {
   const options = [
@@ -13,6 +13,7 @@ const Dashboard = () => {
     { id: 7, name: 'Add New ফায়ার সার্ভিস', path: '/add-fire-service' },
     { id: 8, name: 'Add New কুরিয়ার সার্ভিস', path: '/add-courier-service' },
     { id: 9, name: 'Add New বিদ্যুৎ অফিস', path: '/add-electricity-office' },
+    { id: 10, name: 'Add New ডাক্তার', path: '/add-Doctor'},
   ];
 
   return (
@@ -28,7 +29,7 @@ const Dashboard = () => {
         ))}
         
       </div>
-      <Footer/>
+      
       
     </div>
     
@@ -36,3 +37,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

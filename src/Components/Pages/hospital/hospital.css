@@ -1,47 +1,129 @@
-/* hospital.css */
+/* General Styles */
 .hospital-container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.04);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header Styles */
+.hospital-header {
+  text-align: center;
+  color: #222;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.hospital-header::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background-color: #4caf50;
+  display: block;
+  margin: 10px auto 0;
+}
+
+/* Table Styles */
+/* Row and Column Hover Styles */
+.hospital-table tbody tr {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.hospital-table tbody tr:hover {
+  background-color: #e8f5e9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+/* Highlighting Alternate Rows for Readability */
+.hospital-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.hospital-table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+/* Adding Column-Specific Highlight on Hover */
+.hospital-table tbody td {
+  position: relative;
+}
+
+.hospital-table tbody td:hover {
+  background-color: #dcedc8;
+  color: #2e7d32;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Column Specific Design */
+.hospital-table thead th:first-child,
+.hospital-table tbody td:first-child {
+  text-align: center;
+  background-color: #f1f8e9;
+  font-weight: 700;
+  color: #33691e;
+}
+
+.hospital-table tbody td:last-child {
+  text-align: center;
+  background-color: #e8f5e9;
+  color: #4caf50;
+}
+
+/* Highlight Header Row */
+.hospital-table thead th {
+  border-bottom: 3px solid #388e3c;
+}
+
+/* Adding Icons for Interactivity */
+.hospital-table tbody td a::before {
+  content: "🔗";
+  margin-right: 5px;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hospital-table thead {
+      display: none;
   }
-  
-  .hospital-header {
-    text-align: center;
-    color: #333;
-    font-size: 28px;
-    margin-bottom: 20px;
+
+  .hospital-table tr {
+      display: block;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ddd;
   }
-  
-  .hospital-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .hospital-table th, .hospital-table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  .hospital-table th {
-    background-color: #f2f2f2;
-    color: #333;
-  }
-  
+
   .hospital-table td {
-    background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 14px;
   }
-  
-  .hospital-table a {
-    color: #4caf50;
-    text-decoration: none;
+
+  .hospital-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #333;
+      margin-right: 10px;
   }
-  
-  .hospital-table a:hover {
-    text-decoration: underline;
-  }
-  
+}
+
+/* Footer Styling */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888;
+}

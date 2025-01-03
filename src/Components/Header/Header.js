@@ -16,7 +16,7 @@ const Header = () => {
     // Redirect based on the search query
     const query = searchQuery.toLowerCase();
 
-    if (query === "doctor") {
+    if (query === "doctor" ) {
       navigate("/doctor"); // Navigate to the Doctor component
     } else if (query === "bus") {
       navigate("/bus-schedule"); // Navigate to the BusSchedule component

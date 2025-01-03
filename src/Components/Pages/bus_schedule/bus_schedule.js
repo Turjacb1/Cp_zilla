@@ -79,7 +79,7 @@ const BusSchedule = () => {
           </tbody>
         </table>
       )}
-      <Footer/>
+     
     </div>
   );
 };

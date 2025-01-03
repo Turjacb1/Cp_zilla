@@ -163,7 +163,7 @@ const Hotels = () => {
                     </tr>
                 </tbody>
             </table>
-            <Footer/>
+            
         </div>
     );
 };

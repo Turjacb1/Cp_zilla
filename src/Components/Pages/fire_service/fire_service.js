@@ -1,13 +1,14 @@
 import React from 'react';
+import './FireService.css'; // Import the CSS file
 import Footer from '../../Footer/Footer';
 
 const FireService = () => {
     return (
-        <div style={{ padding: '20px' }}>
-            <h2>Fire Service Contact Information</h2>
-            <table border="1" cellPadding="10" cellSpacing="0" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <div>
+            <h2>Fire Service </h2>
+            <table>
                 <thead>
-                    <tr style={{ backgroundColor: '#f2f2f2' }}>
+                    <tr>
                         <th>ক্রমসংখ্যা</th>
                         <th>নাম</th>
                         <th>পুরাতন ফোন নম্বর</th>
@@ -65,7 +66,7 @@ const FireService = () => {
                     </tr>
                 </tbody>
             </table>
-            <Footer/>
+            
         </div>
     );
 };
