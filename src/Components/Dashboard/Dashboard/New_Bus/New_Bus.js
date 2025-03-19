@@ -23,7 +23,7 @@ const New_Bus = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://cp-zilla.onrender.com/api/bus', {
+      const response = await fetch('http://localhost:5000/api/bus', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
