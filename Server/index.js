@@ -32,7 +32,7 @@ const busSchema = new mongoose.Schema({
 const Bus = mongoose.model('Bus', busSchema);
 
 // POST route to save bus data
-app.post('/api/bus', async (req, res) => {
+app.post('https://cp-zilla.onrender.com/api/bus', async (req, res) => {
   const { busName, from, to, ticketPrice } = req.body;
 
   // Validate the incoming data
@@ -57,7 +57,7 @@ app.post('/api/bus', async (req, res) => {
 
 
 // GET route to retrieve all bus data
-app.get('/api/bus', async (req, res) => {
+app.get('https://cp-zilla.onrender.com/api/bus', async (req, res) => {
     try {
       const buses = await Bus.find();  // Fetch all buses from the database
       res.status(200).json(buses);  // Send the buses as a JSON response
@@ -80,7 +80,7 @@ const doctorSchema = new mongoose.Schema({
 const Doctor = mongoose.model('Doctor', doctorSchema);
 
 // POST route to save doctor data
-app.post('/api/doctors', async (req, res) => {
+app.post('https://cp-zilla.onrender.com/api/doctors', async (req, res) => {
   const { name, phone, address, doctorType } = req.body;
 
   // Validate the incoming data
@@ -104,7 +104,7 @@ app.post('/api/doctors', async (req, res) => {
 });
 
 // GET route to retrieve all doctors
-app.get('/api/doctors', async (req, res) => {
+app.get('https://cp-zilla.onrender.com/api/doctors', async (req, res) => {
   try {
     const doctors = await Doctor.find();  // Fetch all doctors from the database
     res.status(200).json(doctors);  // Send the doctors as a JSON response
