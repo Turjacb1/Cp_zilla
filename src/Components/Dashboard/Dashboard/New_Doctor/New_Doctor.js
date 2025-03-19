@@ -87,6 +87,7 @@
 
 
 
+
 import React, { useState } from 'react';
 import './New_Doctor.css';
 
@@ -108,7 +109,7 @@ const New_Doctor = () => {
         
         // Send data to the backend using fetch
         try {
-            const response = await fetch('http://localhost:5000/api/doctors', {
+            const response = await fetch('https://cp-zilla.onrender.com/api/doctors', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
