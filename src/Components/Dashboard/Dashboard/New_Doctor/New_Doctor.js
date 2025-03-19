@@ -109,7 +109,7 @@ const New_Doctor = () => {
         
         // Send data to the backend using fetch
         try {
-            const response = await fetch('https://cp-zilla.onrender.com/api/doctors', {
+            const response = await fetch('https://cp-zillaa.onrender.com/api/doctors', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
