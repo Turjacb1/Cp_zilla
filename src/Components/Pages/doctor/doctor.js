@@ -68,7 +68,7 @@ const Doctor = () => {
     // Fetch doctors from the backend
     const fetchDoctors = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/doctors');
+        const response = await fetch('https://cp-zilla-p1qjp0i8v-turjacb1s-projects.vercel.app/api/doctors');
         const data = await response.json();
         if (response.ok) {
           setDoctors(data);
