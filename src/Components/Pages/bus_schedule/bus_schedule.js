@@ -19,21 +19,27 @@ const BusSchedule = () => {
     { busName: 'BRTC', from: 'Hajigonj', to: 'Dhaka', ticketPrice: '350' },
     { busName: 'Matlab-Express', from: 'বাবুরহাট', to: 'Dhaka', ticketPrice: '200' }
   ];
+
   // Fetch bus data from the server when the component mounts
   useEffect(() => {
     const fetchBuses = async () => {
       try {
-        const response = await fetch('cp-zilla-p1qjp0i8v-turjacb1s-projects.vercel.app/api/bus');
+        const response = await fetch('https://cp-zilla-p1qjp0i8v-turjacb1s-projects.vercel.app/api/bus');
         if (!response.ok) {
-          throw new Error('Failed to fetch bus data');
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          throw new Error('Response is not JSON');
         }
         const data = await response.json();
         setBuses(data);  // Update state with the fetched bus data
         setLoading(false);  // Set loading to false after data is fetched
       } catch (err) {
-        setError(err.message);  // Handle any errors
-        setLoading(false);
+        console.error('Fetch error:', err);  // Log error for debugging
+        setError(err.message);  // Store error for debugging
         setBuses(staticBuses); // Use static data if the fetch fails
+        setLoading(false);
       }
     };
 
@@ -44,8 +50,8 @@ const BusSchedule = () => {
     <div className="container">
       <h2>Bus Schedule</h2>
       {loading && <p>Loading bus schedule...</p>}
-      {error && <p>Error: {error}</p>}
-      {!loading && !error && (
+      {error && <p>Unable to load data, showing static schedule.</p>}
+      {!loading && (
         <table>
           <thead>
             <tr>
@@ -57,29 +63,17 @@ const BusSchedule = () => {
           </thead>
           <tbody>
             {buses.map((bus, index) => (
-              <tr key={index}>
-                
+              <tr key={`${bus.busName}-${index}`}> {/* Unique key using busName and index */}
                 <td>{bus.busName}</td>
                 <td>{bus.from}</td>
                 <td>{bus.to}</td>
-                <td>{bus.ticketPrice}</td>
-              </tr>
-            ))}
-          </tbody>
-          <tbody>
-            {staticBuses.map((bus, index) => (
-              <tr key={index}>
-                
-                <td>{bus.busName}</td>
-                <td>{bus.from}</td>
-                <td>{bus.to}</td>
-                <td>{bus.ticketPrice}</td>
+                <td>{bus.ticketPrice || 'N/A'}</td> {/* Handle empty ticketPrice */}
               </tr>
             ))}
           </tbody>
         </table>
       )}
-     
+      <Footer />
     </div>
   );
 };
