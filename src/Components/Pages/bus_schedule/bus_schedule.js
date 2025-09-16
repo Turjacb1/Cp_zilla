@@ -23,7 +23,7 @@ const BusSchedule = () => {
   useEffect(() => {
     const fetchBuses = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/bus');
+        const response = await fetch('https://cp-zilla-git-master-turjacb1s-projects.vercel.app/');
         if (!response.ok) {
           throw new Error('Failed to fetch bus data');
         }
